@@ -444,9 +444,9 @@ The `deployers` group will have group ownership and write permissions to the `/o
    drwxrwxr-x 24 root deployers 4096 Mar 28 11:51 cygni
    ```
 
-1. On the server, change the group ownership on the cygni service unit file `/etc/systemd/cygni.service` to `deployers`.
+1. On the server, change the group ownership on the cygni service unit file `/etc/systemd/system/cygni.service` to `deployers`.
 
-1. On the server, change the permissions of `/etc/systemd/cygni.service` to be writable by members of the `deployers` group.
+1. On the server, change the permissions of `/etc/systemd/system/cygni.service` to be writable by members of the `deployers` group.
 
    Expected permissions are as follows:
 
