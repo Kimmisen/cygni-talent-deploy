@@ -5,7 +5,7 @@ HOST=${DEPLOY_USER:?"Deployment user is required"}@${SERVER:?"Server is required
 DEPLOYMENT_NAME=app_$(date +%Y%m%d_%H%M%S)
 DEPLOYMENT_DIR=/opt/cygni/$DEPLOYMENT_NAME
 
-tar -czf - ../src/ ../package.json ../package-lock.json | ssh $HOST "mkdir -p $DEPLOYMENT_DIR; tar zxf - --directory=$DEPLOYMENT_DIR"
+tar -czf - src/ package.json package-lock.json | ssh $HOST "mkdir -p $DEPLOYMENT_DIR; tar zxf - --directory=$DEPLOYMENT_DIR"
 
 ssh $HOST "cd $DEPLOYMENT_DIR && npm ci --production"
 
